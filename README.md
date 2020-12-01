@@ -1,9 +1,10 @@
 # rancher-on-eks
-This is not a module that is being maintained.
+
+**This is presented for example only, please take and re-use.**
+**This is not a module that is being maintained.**
+**There might be some security to revise with this project, it has been used only as a proof-of-concept.**
 
 Terraform-based project to provision an EKS cluster (with a single Managed Node Group) and bootstrap Rancher 2.5.x
-
-This is presented for example only, please take and re-use.
 
 # Introduction
 With Rancher 2.5.x it is possible to use EKS for cluster hosting Rancher. I couldn't find any examples of how to do this (Nov 2020) so I created this project to get it going.
