@@ -1,0 +1,5 @@
+**/.terraform*
+**/out.terraform*
+**/terraform.tfvars*
+**/kubeconfig*
+**/terraform.tfstate*
