@@ -72,7 +72,7 @@ cert_manager_letsencrypt_email | `string` | none | Let's Encrypt email address f
 cert_manager_letsencrypt_environment | `string` | none | Let's Encrypt environment type, must be `"staging"` or `"production"` | `"production"`
 cert_manager_values_filename | `string` | `""` | YAML file for values for `cert-manager` Helm chart | `"values.yaml"`
 cert_manager_version | `string` | none | `cert-manager` Helm chart version to use | `"v1.1.0"`
-ingress_nginx_values_filename | `string` | `""` | YAML file for values for `ingress-nginx` Helm chart | `"values.yaml"`
+ingress_nginx_values_filename | `string` | `"${path.module}/helm-values/ingress-nginx-values.yaml"` | YAML file for values for `ingress-nginx` Helm chart | `"values.yaml"`
 ingress_nginx_version | `string` | none | `ingress-nginx` Helm chart version to use | `"3.12.0"`
 kubernetes_version | `string` | none | The Kubernetes version to choose, must be available for EKS | `"1.18"`
 node_group_desired_capacity | `string` | `"1"` | Desired number of nodes (integer as string) | `"1"`
@@ -87,6 +87,16 @@ subnet_name_filters_for_cluster | `list(string)` | none | Used to filter the sub
 subnet_name_filters_for_nodes | `list(string)` | none | Used to filter the subnet names to find the subnets for the nodes | `["*.private.*"]`
 vpc_id | `string` | none | VPC ID | `"vpc-123456"`
 wait_for_cluster_interpreter | `list(string)` | `["bash", "-c"]` | Shell command for checking/waiting for EKS cluster. See [here](https://github.com/terraform-aws-modules/terraform-aws-eks/#inputs) for more information | `["bash", "-c"]`
+
+**NOTE**: Be careful if you provide your own value for `ingress_nginx_values_filename`, the default values file provides annotations for a type of ingress deployment that is tested and working, specifically:
+```
+controller:
+  service:
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
+      service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+```
 
 # Outputs
 

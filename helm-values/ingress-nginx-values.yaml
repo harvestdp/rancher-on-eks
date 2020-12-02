@@ -1,26 +1,6 @@
 controller:
-  kind: DaemonSet
-  livenessProbe:
-    timeoutSeconds: 9
-  readinessProbe:
-    timeoutSeconds: 9
-  metrics:
-    enabled: true
-    service:
-      annotations:
-        prometheus.io/scrape: "true"
   service:
     annotations:
       service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
       service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
       service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-  config:
-    enable-vts-status: "true"
-    hsts-max-age: "31536000"
-    http-redirect-code: "301"
-    proxy-body-size: 40m
-    server-tokens: "false"
-    ssl-ciphers: EECDH+AESGCM:EDH+AESGCM
-    ssl-ecdh-curve: secp384r1
-    ssl-protocols: TLSv1.2 TLSv1.3
-    use-proxy-protocol: "true"
