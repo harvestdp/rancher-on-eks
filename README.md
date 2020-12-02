@@ -12,6 +12,7 @@ This project is based on and inspired by:
 * EKS module [terraform-aws-modules/terraform-aws-eks](https://github.com/terraform-aws-modules/terraform-aws-eks)
 * Rancher blog post [Deploy a Rancher Cluster with GitLab CI and Terraform](https://rancher.com/blog/2020/deploy-with-gitlab-ci)
 * Terraform provider [rancher/rancher2](https://registry.terraform.io/providers/rancher/rancher2/latest/docs)
+* Rancher Helm chart `rancher-monitoring-crd` (inspiration for how to install CRDs)
 
 # Introduction
 With Rancher 2.5.x it is possible to use EKS for cluster hosting Rancher. I couldn't find any examples of how to do this (Nov 2020) so I created this project to get it going.
