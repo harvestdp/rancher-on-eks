@@ -63,9 +63,21 @@ variable "ingress_nginx_version" {
   description = "Ingress Nginx version"
 }
 
+variable "ingress_nginx_values_filename" {
+  type        = string
+  description = "Filename for the Helm values YAML file for ingress-nginx"
+  default     = ""
+}
+
 variable "cert_manager_version" {
   type        = string
   description = "Cert-manager version from https://cert-manager.io/docs/installation/kubernetes/"
+}
+
+variable "cert_manager_values_filename" {
+  type        = string
+  description = "Filename for the Helm values YAML file for cert-manager"
+  default     = ""
 }
 
 variable "cert_manager_letsencrypt_environment" {
@@ -81,6 +93,12 @@ variable "cert_manager_letsencrypt_email" {
 variable "rancher_version" {
   type        = string
   description = "Rancher version"
+}
+
+variable "rancher_values_filename" {
+  type        = string
+  description = "Filename for the Helm values YAML file for rancher"
+  default     = ""
 }
 
 variable "rancher_admin_password" {

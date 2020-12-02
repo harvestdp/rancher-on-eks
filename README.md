@@ -70,7 +70,9 @@ Variable name | Type | Default | Description | Example
 base_domain | `string` | none | The domain of the existing Route53 Hosted Zone to use | `"test.example.com"`
 cert_manager_letsencrypt_email | `string` | none | Let's Encrypt email address for expiration notices | `"you@example.com"`
 cert_manager_letsencrypt_environment | `string` | none | Let's Encrypt environment type, must be `"staging"` or `"production"` | `"production"`
+cert_manager_values_filename | `string` | `""` | YAML file for values for `cert-manager` Helm chart | `"values.yaml"`
 cert_manager_version | `string` | none | `cert-manager` Helm chart version to use | `"v1.1.0"`
+ingress_nginx_values_filename | `string` | `""` | YAML file for values for `ingress-nginx` Helm chart | `"values.yaml"`
 ingress_nginx_version | `string` | none | `ingress-nginx` Helm chart version to use | `"3.12.0"`
 kubernetes_version | `string` | none | The Kubernetes version to choose, must be available for EKS | `"1.18"`
 node_group_desired_capacity | `string` | `"1"` | Desired number of nodes (integer as string) | `"1"`
@@ -78,7 +80,8 @@ node_group_instance_type | `string` | `"m5.large"` | Instance type for node grou
 node_group_max_size | `string` | `"1"` | Maximum number of nodes (integer as string) | `"1"`
 node_group_min_size | `string` | `"1"` | Minimum number of nodes (integer as string) | `"1"`
 rancher_admin_password | `string` | none | Admin password to add to Rancher | something complex!
-rancher_version | `string` | none | `cert-manager` Helm chart version to use | `"2.5.2"`
+rancher_values_filename | `string` | `""` | YAML file for values for `rancher` Helm chart | `"values.yaml"`
+rancher_version | `string` | none | `rancher` Helm chart version to use | `"2.5.2"`
 region | `string` | none | AWS region to use | `"ap-southeast-2"`
 subnet_name_filters_for_cluster | `list(string)` | none | Used to filter the subnet names to find the subnets for the EKS cluster | `["*.public.*", "*.private.*"]`
 subnet_name_filters_for_nodes | `list(string)` | none | Used to filter the subnet names to find the subnets for the nodes | `["*.private.*"]`

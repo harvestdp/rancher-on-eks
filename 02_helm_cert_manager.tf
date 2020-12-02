@@ -118,4 +118,5 @@ resource "helm_release" "cert_manager" {
   repository = "https://charts.jetstack.io"
   chart      = "cert-manager"
   namespace  = "cert-manager"
+  values     = var.cert_manager_values_filename != "" ? [file(var.cert_manager_values_filename)] : []
 }
