@@ -87,4 +87,5 @@ cluster_name | `string` | The EKS cluster name | `rancher-gw5rz60g`
 kubeconfig | `string` | The contents of the kubeconfig file | `<sensitive>`
 kubeconfig_filename | `string` | The path of the kubeconfig file | `./kubeconfig_rancher-gw5rz60g`
 rancher_admin_domain | `string` | Domain name of Rancher instance | `rancher-gw5rz60g.test.example.com`
+rancher_admin_token | `string` | Rancher API token for Admin user | `<sensitive>`
 rancher_admin_url | `string` | URL of Rancher instance | `https://rancher-gw5rz60g.test.example.com`

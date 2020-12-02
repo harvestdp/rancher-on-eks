@@ -13,6 +13,12 @@ output "rancher_admin_url" {
   value       = "https://${local.full_domain}"
 }
 
+output "rancher_admin_token" {
+  value       = rancher2_bootstrap.admin.token
+  description = "Rancher admin user token."
+  sensitive   = true
+}
+
 output "kubeconfig" {
   description = "kubectl config file contents for this EKS cluster."
   value       = module.eks.kubeconfig
