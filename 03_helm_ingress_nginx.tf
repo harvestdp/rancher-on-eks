@@ -7,7 +7,7 @@ resource "helm_release" "ingress_nginx" {
   chart            = "ingress-nginx"
   namespace        = "ingress-nginx"
   create_namespace = true
-  values           = var.rancher_values_filename != "" ? [file(var.rancher_values_filename)] : []
+  values           = var.ingress_nginx_values_filename != "" ? [file(var.ingress_nginx_values_filename)] : [file("${path.module}/helm-values/ingress-nginx-values.yaml")]
 }
 
 data "kubernetes_service" "ingress_nginx_service" {

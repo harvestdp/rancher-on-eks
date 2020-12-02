@@ -66,7 +66,7 @@ variable "ingress_nginx_version" {
 variable "ingress_nginx_values_filename" {
   type        = string
   description = "Filename for the Helm values YAML file for ingress-nginx"
-  default     = "${path.module}/helm-values/ingress-nginx-values.yaml"
+  default     = ""
 }
 
 variable "cert_manager_version" {

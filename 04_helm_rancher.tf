@@ -7,7 +7,7 @@ resource "helm_release" "rancher" {
   version          = var.rancher_version
   namespace        = "cattle-system"
   create_namespace = true
-  values           = var.ingress_nginx_values_filename != "" ? [file(var.ingress_nginx_values_filename)] : []
+  values           = var.rancher_values_filename != "" ? [file(var.rancher_values_filename)] : []
 
   set {
     name  = "helmVersion"
