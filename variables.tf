@@ -47,7 +47,7 @@ variable "base_domain" {
   description = "Base domain for the Rancher subdomain."
 }
 
-variable "wait_for_cluster_interpreter" {
+variable "shell_interpreter" {
   type        = list(string)
   description = "The shell interpreter that should be used for the EKS 'wait for cluster'."
   default     = ["bash", "-c"]

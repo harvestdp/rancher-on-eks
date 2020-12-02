@@ -40,7 +40,7 @@ module "eks" {
   cluster_name                 = local.cluster_name
   cluster_version              = var.kubernetes_version
   vpc_id                       = data.aws_vpc.vpc.id
-  wait_for_cluster_interpreter = var.wait_for_cluster_interpreter
+  wait_for_cluster_interpreter = var.shell_interpreter
 
   subnets = flatten([for subnets in data.aws_subnet_ids.cluster_subnet_set : tolist(subnets.ids)])
 

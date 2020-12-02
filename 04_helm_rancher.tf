@@ -54,7 +54,7 @@ while [ "$${resp}" != "pong" ]; do
     fi
 done
 EOF
-    interpreter = ["bash", "-c"]
+    interpreter = var.shell_interpreter
 
     environment = {
       RANCHER_HOSTNAME = local.full_domain

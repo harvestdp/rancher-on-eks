@@ -86,7 +86,7 @@ region | `string` | none | AWS region to use | `"ap-southeast-2"`
 subnet_name_filters_for_cluster | `list(string)` | none | Used to filter the subnet names to find the subnets for the EKS cluster | `["*.public.*", "*.private.*"]`
 subnet_name_filters_for_nodes | `list(string)` | none | Used to filter the subnet names to find the subnets for the nodes | `["*.private.*"]`
 vpc_id | `string` | none | VPC ID | `"vpc-123456"`
-wait_for_cluster_interpreter | `list(string)` | `["bash", "-c"]` | Shell command for checking/waiting for EKS cluster. See [here](https://github.com/terraform-aws-modules/terraform-aws-eks/#inputs) for more information | `["bash", "-c"]`
+shell_interpreter | `list(string)` | `["bash", "-c"]` | Shell command for CLI commands. eg. [wait_for_cluster_interpreter](https://github.com/terraform-aws-modules/terraform-aws-eks/#inputs) for more information | `["bash", "-c"]`
 
 **NOTE**: Be careful if you provide your own value for `ingress_nginx_values_filename`, the default values file provides annotations for a type of ingress deployment that is tested and working, specifically:
 ```
