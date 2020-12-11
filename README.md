@@ -72,6 +72,7 @@ cert_manager_letsencrypt_email | `string` | none | Let's Encrypt email address f
 cert_manager_letsencrypt_environment | `string` | none | Let's Encrypt environment type, must be `"staging"` or `"production"` | `"production"`
 cert_manager_values_filename | `string` | `""` | YAML file for values for `cert-manager` Helm chart | `"values.yaml"`
 cert_manager_version | `string` | none | `cert-manager` Helm chart version to use | `"v1.1.0"`
+cluster_name | `string` | "" | The EKS cluster name. Name is auto generated as 'rancher-rAnDomChARs' if empty | `"rancher-dev"`
 ingress_nginx_values_filename | `string` | `"${path.module}/helm-values/ingress-nginx-values.yaml"` | YAML file for values for `ingress-nginx` Helm chart | `"values.yaml"`
 ingress_nginx_version | `string` | none | `ingress-nginx` Helm chart version to use | `"3.12.0"`
 kubernetes_version | `string` | none | The Kubernetes version to choose, must be available for EKS | `"1.18"`

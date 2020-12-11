@@ -47,6 +47,12 @@ variable "base_domain" {
   description = "Base domain for the Rancher subdomain."
 }
 
+variable "cluster_name" {
+  type        = string
+  description = "The EKS cluster name. Name is auto generated as 'rancher-rAnDomChARs' if empty"
+  default     = ""
+}
+
 variable "shell_interpreter" {
   type        = list(string)
   description = "The shell interpreter that should be used for the EKS 'wait for cluster'."
